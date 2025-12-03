@@ -5,7 +5,11 @@
 #I want to check if a line from my notes includes the string `#TODO`.
 
 def todo_list(string):
-    if "#TODO" in string:
-        return True
-    else:
-        return False
+
+    if not isinstance(string, str):
+        raise TypeError("Please input a valid note")
+
+    if string == "" or string == " ":
+        return "Please input a valid note"
+
+    return "#TODO" in string
